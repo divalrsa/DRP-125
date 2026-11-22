@@ -60,10 +60,7 @@ print("\nTotal baris yang terdampak:", len(cek_surname))
 df["Surname"] = df["Surname"].str.replace("?", "", regex=False)
 
 # Cek ulang
-print("Jumlah baris dengan nilai L?:", (df["Surname"] == "L?").sum())
-print("Jumlah baris dengan nilai H?:", (df["Surname"] == "H?").sum())
-print("Jumlah baris dengan nilai Hs?:", (df["Surname"] == "Hs?").sum())
-print("Jumlah baris dengan nilai Y?An:", (df["Surname"] == "Y?An").sum())
-print("Jumlah baris dengan nilai K?:", (df["Surname"] == "K?").sum())
-print("Jumlah baris dengan nilai Y?:", (df["Surname"] == "Y?").sum())
-print("Jumlah baris dengan nilai Hs?Eh:", (df["Surname"] == "Hs?Eh").sum())
+cek_surname = df[df["Surname"].str.contains(r"[^a-zA-Z\s'-]", na=False)]
+
+print("Daftar nama unik yang aneh:")
+print(cek_surname["Surname"].unique())
