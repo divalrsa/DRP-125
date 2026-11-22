@@ -55,3 +55,15 @@ print("Jumlah baris dengan nilai Y?:", (df["Surname"] == "Y?").sum())
 print("Jumlah baris dengan nilai Hs?Eh:", (df["Surname"] == "Hs?Eh").sum())
 
 print("\nTotal baris yang terdampak:", len(cek_surname))
+
+# Menghapus karakter tanda tanya (?)
+df["Surname"] = df["Surname"].str.replace("?", "", regex=False)
+
+# Cek ulang
+print("Jumlah baris dengan nilai L?:", (df["Surname"] == "L?").sum())
+print("Jumlah baris dengan nilai H?:", (df["Surname"] == "H?").sum())
+print("Jumlah baris dengan nilai Hs?:", (df["Surname"] == "Hs?").sum())
+print("Jumlah baris dengan nilai Y?An:", (df["Surname"] == "Y?An").sum())
+print("Jumlah baris dengan nilai K?:", (df["Surname"] == "K?").sum())
+print("Jumlah baris dengan nilai Y?:", (df["Surname"] == "Y?").sum())
+print("Jumlah baris dengan nilai Hs?Eh:", (df["Surname"] == "Hs?Eh").sum())
