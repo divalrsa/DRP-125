@@ -38,7 +38,7 @@ print(df["CustomerId"].nunique() == len(df)) # True (Tidak ada sel kosong)
 # Cek nama marga yang mengandung karakter selain huruf, spasi, '
 cek_surname = df[df["Surname"].str.contains(r"[^a-zA-Z\s'-]", na=False)]
 
-print("Daftar nama unik yang aneh:", cek_surname["Surname"].unique())
+print("Daftar marga yang mengandung tanda tanya: ", cek_surname["Surname"].unique())
 
 # Cek banyak baris yang mengandung marga yg sama
 print("Jumlah baris dengan nilai L?:", (df["Surname"] == "L?").sum())
@@ -50,3 +50,6 @@ print("Jumlah baris dengan nilai Y?:", (df["Surname"] == "Y?").sum())
 print("Jumlah baris dengan nilai Hs?Eh:", (df["Surname"] == "Hs?Eh").sum())
 
 print("\nTotal baris yang terdampak:", len(cek_surname))
+
+# Nama-nama di atas sudah ada di dalam dataset asli sehingga bukan kesalahan encoding python
+# Nama dibiarkan karena tidak terlalu berpengaruh terhadap analisis
