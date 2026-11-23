@@ -26,6 +26,9 @@ print(df["Surname"].str.strip().nunique()) # 2932
 print(df["Geography"].str.strip().nunique()) # 3 (France, Germany, Spain)
 print(df["Gender"].str.strip().nunique()) # 2 (Male, Female)
 
+# Cek apakah pada kolom SUrname huruf depannya sudah kapital semua
+print(df["Surname"].str[0].str.istitle().sum())
+
 # Cek nilai minimum dan maksimum semua kolom numerik
 print(df.describe().T[["min", "50%", "max"]])
 
